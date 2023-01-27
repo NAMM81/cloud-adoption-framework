@@ -16,7 +16,7 @@ Security policy and standards teams author, approve, and publish security policy
 
 The policies and standards should:
 
-- Reflect the organizations security strategy at a detailed enough way to guide decisions in the organization by various teams
+- Reflect the organizations security strategy at a detailed enough way to guide decisions in the organization by different teams
 - Enable productivity throughout the organization while reducing risk to the organizations business and mission
 
 **Security policy** should reflect long term sustainable objectives that align to the organizations security strategy and risk tolerance. Policy should always address:
