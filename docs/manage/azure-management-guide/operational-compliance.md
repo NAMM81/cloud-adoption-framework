@@ -45,16 +45,6 @@ Computers that are managed by the Update Management solution for Azure Automatio
 
 For more information, see [Update Management solution for Azure Automation](/azure/automation/update-management/overview).
 
-> [!WARNING]
-> Before using Update Management, you must onboard virtual machines or an entire subscription into Log Analytics and Azure Automation.
->
-> There are two approaches to onboarding:
->
-> - [Single VM](../azure-server-management/onboard-single-vm.md)
-> - [Entire subscription](../azure-server-management/onboard-at-scale.md)
->
-> You should follow one before proceeding with Update Management.
-
 ### Manage updates
 
 To apply a policy to a resource group:
@@ -62,7 +52,7 @@ To apply a policy to a resource group:
 1. Go to [Azure Automation](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Automation%2FAutomationAccounts).
 1. Select **Automation accounts**, and choose one of the listed accounts.
 1. Go to **Configuration Management**.
-1. Use **Inventory**, **Change Management**, and **State Configuration** to control the state and operational compliance of the managed VMs.
+1. Use **State Configuration (DSC)** to control the state and operational compliance of the managed VMs.
 
 ::: zone target="chromeless"
 

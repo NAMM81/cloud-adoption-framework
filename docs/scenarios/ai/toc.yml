@@ -1,5 +1,5 @@
 items:
-  - name: Overview AI on Azure
+  - name: Overview AI adoption
     href: index.md
   - name: AI Strategy
     href: strategy.md
@@ -43,6 +43,8 @@ items:
             href: infrastructure/management.md
           - name: Security
             href: infrastructure/security.md
+      - name: Well-architected
+        href: infrastructure/well-architected.md
   - name: Govern AI
     href: govern.md
   - name: Manage AI 

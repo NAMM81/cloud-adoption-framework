@@ -1,13 +1,13 @@
 ---
-title: Secure AI – Recommendations for organizations securing AI workloads in Azure
-description: Learn the process to secure AI workloads in Azure with best practices and recommendations.
+title: Secure AI – Process to secure AI
+description: Learn the process to secure AI with best practices and recommendations.
 ms.author: ssumner
 author: stephen-sumner
 ms.date: 11/01/2024
 ms.topic: conceptual
 ---
 
-# Secure AI – Recommendations for organizations securing AI workloads in Azure
+# Secure AI – Process to secure AI
 
 This article outlines the organizational process for securing AI workloads. It focuses on the confidentiality, integrity, and availability (CIA) of AI. Effective security practices reduce the risk of compromise by safeguarding the confidentiality, integrity, and availability of AI models and data. A secure AI environment also aligns with business security goals and enhances trust in AI-driven processes.
 
@@ -17,13 +17,29 @@ This article outlines the organizational process for securing AI workloads. It f
 
 Assessing AI security risks involves identifying and evaluating potential vulnerabilities that might affect AI workloads. Proactively addressing these risks helps prevent breaches, manipulation, and misuse, which strengthens the reliability of AI applications. This approach also supports organizational goals by protecting sensitive data and maintaining stakeholder trust.
 
-- *Identify common AI security risks.* Use recognized resources like [MITRE ATLAS](https://atlas.mitre.org/), [OWASP Machine Learning risk](https://mltop10.info/), and [OWASP Generative AI risk](https://genai.owasp.org/) to regularly evaluate risks across all AI workloads. For ongoing security posture management, consider using AI security tools like [AI security posture management](/azure/defender-for-cloud/ai-security-posture) in Microsoft Defender for Cloud. These tools can automate the detection and remediation of generative AI risks.
+- *Identify common AI security risks.* Use recognized resources like [MITRE ATLAS](https://atlas.mitre.org/) and [OWASP Generative AI risk](https://genai.owasp.org/) to regularly evaluate risks across all AI workloads.
 
-- *Identify data risks.* Sensitive data loss or exposure can have significant impacts on your organization’s stakeholders and compliance obligations. Use enterprise-wide tools like [Microsoft Purview Insider Risk Management](/purview/insider-risk-management) to assess insider risk and maintain data security throughout the business. Across all AI workloads, classify and prioritize risks based on the sensitivity of the data that they process, store, or transmit.
+- *Manage your AI security posture.* For ongoing security posture management, consider using AI security tools like [AI security posture management](/azure/defender-for-cloud/ai-security-posture) in Microsoft Defender for Cloud. These tools can automate the detection and remediation of generative AI risks.
 
-- *Conduct AI threat modeling.* Perform company-wide AI [threat modeling](https://www.microsoft.com/securityengineering/sdl/threatmodeling) by using frameworks like STRIDE to assess potential attack vectors for all AI workloads. Update threat models regularly to adapt to new AI use cases and threats. The [AI center of excellence](./center-of-excellence.md) should consider centralizing AI threat modeling to ensure a uniform approach across the organization and mitigate risks associated with various AI models, data sources, and processes.
+- *Identify data risks.* Use enterprise-wide tools like [Microsoft Purview Insider Risk Management](/purview/insider-risk-management) to assess insider risk and maintain data security throughout the business. Across all AI workloads, classify and prioritize risks based on the sensitivity of the data that they process, store, or transmit.
 
-- *Test AI models.* Conduct red-team testing against [generative AI models](/azure/ai-services/openai/concepts/red-teaming) and nongenerative models to assess their vulnerability to attacks. Tools like [PyRIT](https://github.com/Azure/PyRIT/tree/main#python-risk-identification-tool-for-generative-ai-pyrit) can automate this process for generative AI, so that you can challenge the model's outputs under various conditions. This step is highly technical and requires dedicated expertise to perform effectively.
+- *Red team AI models.* Conduct red team testing against [generative AI models](/azure/ai-services/openai/concepts/red-teaming) and nongenerative models to assess their vulnerability to attacks. Follow these recommendations for red teaming AI:
+
+  - *Assess system capabilities and application context.* Identify what the AI system can do and where it is applied to target real-world vulnerabilities effectively. Work backward from potential impacts to design meaningful attack strategies.  
+  
+  - *Use simple attack techniques first.* Exploit basic prompt engineering and system weaknesses before attempting complex adversarial attacks. Many real-world breaches rely on low-resource techniques.  
+  
+  - *Distinguish red teaming from benchmarking.* AI red teaming uncovers unknown risks. Benchmarking assesses known vulnerabilities. Focus on testing AI in real-world scenarios rather than relying solely on predefined evaluation metrics.  
+  
+  - *Automate to expand risk coverage.* Use tools like [PyRIT](https://github.com/Azure/PyRIT/tree/main#python-risk-identification-tool-for-generative-ai-pyrit) to test AI systems at scale but maintain human oversight.
+  
+  - *Prioritize human judgment in AI red teaming.* Automation aids testing, but humans provide necessary context for evaluating nuanced risks like bias, emotional responses, and cultural implications.  
+  
+  - *Develop reliable methods to measure responsible AI failures.* Responsible AI failures occur when AI systems violate the principles of responsible AI. Unlike security vulnerabilities, these failures are harder to define and measure due to their subjective, social, and ethical implications. Use structured guidelines and scenario-based assessments to evaluate and mitigate harmful outputs.  
+  
+  - *Secure both traditional and AI-specific threats.* Address conventional security vulnerabilities alongside AI risks like prompt injections and data exfiltration. Strengthen both system-level and model-specific defenses.  
+
+For more information, see [Lessons from red teaming 100 generative AI products](https://aka.ms/AIRTLessonsPaper).
 
 ## Implement AI security controls
 
@@ -40,10 +56,10 @@ Securing AI resources includes managing and protecting the systems, models, and 
 - *Use workload specific governance guidance.* Detailed security guidance is available for AI workloads on Azure platform services (PaaS) and Azure infrastructure (IaaS). Use this guidance to secure AI models, resources, and data within these workload types.
 
     > [!div class="nextstepaction"]
-    > [Secure PaaS AI workloads](./platform/security.md)
-    
+    > [Security for Azure platforms (PaaS)](./platform/security.md)
+
     > [!div class="nextstepaction"]
-    > [Secure IaaS AI workloads](./infrastructure/security.md)
+    > [Security for Azure infrastructure (IaaS)](./infrastructure/security.md)
 
 ### Secure AI data
 
@@ -51,7 +67,7 @@ Securing AI data involves protecting the data that AI models use and generate. E
 
 - *Define and maintain data boundaries.* Ensure AI workloads use data appropriate for their access level. AI applications accessible to all employees should only process data suitable for all employees. Internet-facing AI applications must use data appropriate for public consumption. Use separate datasets or environments for different AI applications to prevent inadvertent data access. Consider using Microsoft Purview’s suite of [data security](/purview/purview-security) tools to secure your data.
 
-- *Implement strict data access controls. Ensure applications verify that end-users are authorized to access the data involved in their queries.* Avoid broad system permissions for user actions. Operate under the principle that if the AI can access certain information, the user should be authorized to access it directly.
+- *Implement strict data access controls.* Ensure applications verify that end-users are authorized to access the data involved in their queries. Avoid broad system permissions for user actions. Operate under the principle that if the AI can access certain information, the user should be authorized to access it directly.
 
 - *Maintain a data catalog.* Keep an up-to-date catalog of all data connected to and consumed by AI systems, including storage locations and access details. Regularly scan and label data to track sensitivity levels and suitability, aiding in analytics and risk identification. Consider using [Microsoft Purview Data Catalog](/purview/purview-security) to map and govern your data.
 
@@ -78,4 +94,4 @@ Maintaining AI security controls includes ongoing monitoring, testing, and updat
 Govern AI, Manage AI, and Secure AI are continuous processes you must iterate through regularly. Revisit each AI Strategy, AI Plan, and AI Ready as needed. Use the AI adoption checklists to determine what your next step should be.
 
 > [!div class="nextstepaction"]
-> [AI adoption checklists](index.md#ai-adoption-checklists)
+> [AI checklists](index.md#ai-checklists)

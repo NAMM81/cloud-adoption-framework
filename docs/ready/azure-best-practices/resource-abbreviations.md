@@ -24,8 +24,8 @@ This page gives you abbreviation examples for many of the resources in Azure. Th
 |--|--|--|
 | AI Search | `Microsoft.Search/searchServices` | `srch` |
 | Azure AI services | `Microsoft.CognitiveServices/accounts` (kind: `AIServices`) | `ais` |
-| Azure AI Studio hub | `Microsoft.MachineLearningServices/workspaces` (kind: `Hub`) | `hub` |
-| Azure AI Studio project | `Microsoft.MachineLearningServices/workspaces` (kind: `Project`) | `proj` |
+| Azure AI Foundry hub | `Microsoft.MachineLearningServices/workspaces` (kind: `Hub`) | `hub` |
+| Azure AI Foundry project | `Microsoft.MachineLearningServices/workspaces` (kind: `Project`) | `proj` |
 | Azure AI Video Indexer | `Microsoft.VideoIndexer/accounts` | `avi` |
 | Azure Machine Learning workspace | `Microsoft.MachineLearningServices/workspaces` | `mlw` |
 | Azure OpenAI Service | `Microsoft.CognitiveServices/accounts` (kind: `OpenAI`) | `oai` |
@@ -89,6 +89,7 @@ This page gives you abbreviation examples for many of the resources in Azure. Th
 | Azure Arc enabled server | `Microsoft.HybridCompute/machines` | `arcs` |
 | Azure Arc enabled Kubernetes cluster | `Microsoft.Kubernetes/connectedClusters` | `arck` |
 | Azure Arc private link scope | `Microsoft.HybridCompute/privateLinkScopes` | `pls` |
+| Azure Arc gateway | `Microsoft.HybridCompute/gateways` | `arcgw` |
 | Batch accounts | `Microsoft.Batch/batchAccounts` | `ba` |
 | Cloud service | `Microsoft.Compute/cloudServices` | `cld` |
 | Communication Services | `Microsoft.Communication/communicationServices` | `acs` |
@@ -221,6 +222,7 @@ This page gives you abbreviation examples for many of the resources in Azure. Th
 | Firewall | `Microsoft.Network/azureFirewalls` | `afw` |
 | Firewall policy | `Microsoft.Network/firewallPolicies` | `afwp` |
 | ExpressRoute circuit | `Microsoft.Network/expressRouteCircuits` | `erc` |
+| ExpressRoute direct | `Microsoft.Network/expressRoutePorts` | `erd` |
 | ExpressRoute gateway | `Microsoft.Network/virtualNetworkGateways` | `ergw` |
 | Front Door (Standard/Premium) profile | `Microsoft.Cdn/profiles` | `afd` |
 | Front Door (Standard/Premium) endpoint | `Microsoft.Cdn/profiles/afdEndpoints` | `fde` |

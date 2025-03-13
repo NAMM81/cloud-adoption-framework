@@ -3,7 +3,7 @@ title: Testing approach for Azure landing zones
 description: Testing approach for Azure landing zones
 author: jtracey93
 ms.author: jatracey
-ms.date: 10/09/2022
+ms.date: 12/16/2024
 ms.topic: conceptual
 ms.custom: think-tank
 ---
@@ -13,7 +13,7 @@ ms.custom: think-tank
 > [!NOTE]
  > This article only applies to Microsoft Azure and not to any other Microsoft Cloud offerings such as Microsoft 365 or Microsoft Dynamics 365.
 
-Some organizations might want to test their Azure landing zones platform deployment for Azure Policy definitions and assignments, role-based access control (RBAC) custom roles and assignments, and so on. The tests can be completed via automation by using Azure Resource Manager templates (ARM templates), [AzOps](https://github.com/Azure/AzOps), [Terraform](https://registry.terraform.io/modules/Azure/caf-enterprise-scale/azurerm/latest), [Bicep](https://aka.ms/alz/bicep), or manually via the Azure portal. This guidance provides an approach that can be used to test changes and their impact in an Azure landing zones platform deployment.
+Some organizations might want to test their Azure landing zones platform deployment for Azure Policy definitions and assignments, role-based access control (RBAC) custom roles and assignments, and so on. The tests can be completed via automation by using Azure Resource Manager templates (ARM templates), [Terraform](https://aka.ms/alz/tf), [Bicep](https://aka.ms/alz/bicep), or manually via the Azure portal. This guidance provides an approach that can be used to test changes and their impact in an Azure landing zones platform deployment.
 
 This article can also be used with the [Platform automation and DevOps critical design area](../landing-zone/design-area/platform-automation-devops.md) guidance as it relates to the PlatformOps and Central functions teams and tasks.
 
@@ -101,7 +101,6 @@ However, this approach doesn't allow you to test with the inheritance of RBAC an
 Considerations to take into account when you use a single Microsoft Entra tenant are:
 
 - Follows [Enterprise-scale design recommendations](../landing-zone/design-area/azure-billing-microsoft-entra-tenant.md) for Microsoft Entra tenants.
-- As per the [Cloud Adoption Framework Azure best practices, standardize on a single directory and identity](../../secure/security-top-10.md#9-architecture-standardize-on-a-single-directory-and-identity) guidance, single Microsoft Entra tenants are best practice for most.
   - In a single Microsoft Entra tenant, you can use the different Microsoft Entra groups for both production environments and canary Azure landing zones environments, with the same users, assigned to their relevant management group hierarchy within the same Microsoft Entra tenant.
 - Increased or duplicated Microsoft Entra ID licensing costs because of multiple identities across different Microsoft Entra tenants.
   - This point is especially relevant to customers who use Microsoft Entra ID P1 or P2 features.
